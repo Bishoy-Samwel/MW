@@ -6,7 +6,7 @@ function App() {
   const [photos, setPhotos] = useState([]);
 
   useEffect( () => {
-    getAll().then((data) => {console.log(data);})
+    getAll().then((data) => {setPhotos(data);})
   },[])
 
   const slides =  [
@@ -16,6 +16,11 @@ function App() {
     {url: "http://127.0.0.1:5173/assets/4.jpg"},
     {url: "http://127.0.0.1:5173/assets/5.jpg"}
   ]
+  const containerStyles = {
+    width: "500px",
+    height: "280px",
+    margin: "0 auto"
+  };
 
   return (
     <div className="App" style ={containerStyles}>
