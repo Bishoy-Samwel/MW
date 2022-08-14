@@ -10,11 +10,12 @@ function App() {
   },[])
 
   const slides =  [
-    {url: "http://127.0.0.1:5173/assets/1.jpg"},
-    {url: "http://127.0.0.1:5173/assets/2.jpg"},
-    {url: "http://127.0.0.1:5173/assets/3.jpg"},
-    {url: "http://127.0.0.1:5173/assets/4.jpg"},
-    {url: "http://127.0.0.1:5173/assets/5.jpg"}
+    {url: "http://127.0.0.1:5173/assets/1.jpg", title:"Bird"}, 
+    {url: "http://127.0.0.1:5173/assets/2.jpg", title:"Wall"},
+    {url: "http://127.0.0.1:5173/assets/3.jpg", title:"Dog"},
+    {url: "http://127.0.0.1:5173/assets/4.jpg", 
+    title:"Table"},
+    {url: "http://127.0.0.1:5173/assets/5.jpg",title:"Mountain"}
   ]
   const containerStyles = {
     width: "500px",
