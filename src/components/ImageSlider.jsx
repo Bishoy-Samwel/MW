@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { FiArrowLeftCircle } from "react-icons/fi";
 
 export const ImageSlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
+
   const slideStyles = {
     width: "100%",
     height: "100%",
@@ -19,15 +23,21 @@ export const ImageSlider = ({ slides }) => {
   }
 
   const leftArrowStyles = {
-    fontSize: "45px",
     cursor: "pointer",
-    color: "black",
+    color: "#999",
+    border: "2px solid #999",
+    width: "25px",
+    height: "25px",
+    borderRadius: "50%",
   }
 
   const rightArrowStyles = {
-    fontSize: "45px",
     cursor: "pointer",
-    color: "black"
+    color: "#999",
+    border: "2px solid #999",
+    width: "25px",
+    height: "25px",
+    borderRadius: "50%",
   }
 
   const goToPrevious = () => {
@@ -51,10 +61,12 @@ export const ImageSlider = ({ slides }) => {
     justifyContent: "center"
   }
 
-  const topIconStyles = {
-    margin: "0 3px",
-    cursor: "pointer",
-    fontSize: "20px"
+  const topIconStyles = () => {
+    return {
+      margin: "0 3px",
+      cursor: "pointer",
+      fontSize: "20px"
+    }
   }
   return (
     <>
@@ -68,9 +80,9 @@ export const ImageSlider = ({ slides }) => {
         }
       </div>
       <div style={sliderStyles}>
-        <div style={leftArrowStyles} onClick={goToPrevious}>O</div>
+        <div style={leftArrowStyles} onClick={goToPrevious}><i class="arrow left"></i></div>
         <div style={slideStyles}></div>
-        <div style={rightArrowStyles} onClick={goToNext}>O</div>
+        <div style={rightArrowStyles} onClick={goToNext}><i class="arrow right"></i></div>
       </div>
     </>
   )
