@@ -13,12 +13,36 @@ export const ImageSlider = ({ slides }) => {
 
   const sliderStyles = {
     height: "100%",
-    position: "relative"
+    display: "flex",
+    alignItems:"center",
+    justifyItems: "spaceBetween"
   }
+
+  const leftArrowStyles = {
+    fontSize: "45px",
+    cursor: "pointer",
+    color: "black",
+  }
+
+  const rightArrowStyles = {
+    fontSize: "45px",
+    cursor: "pointer",
+    color: "black"
+  }
+
+  const goToPrevious = () => {
+  
+  }
+  
+  const goToNext = () => {
+
+  }
+
   return (
-   <div style={sliderStyles}>
-    <div style={slideStyles}>
+    <div style={sliderStyles}>
+      <div style={leftArrowStyles} onClick={goToPrevious}>O</div>
+      <div style={slideStyles}></div>
+      <div style={rightArrowStyles} onClick={goToNext}>O</div>
     </div>
-   </div>
   )
 }
