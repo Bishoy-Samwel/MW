@@ -2,11 +2,12 @@ import './App.css'
 import { getAll } from "./api";
 import { useEffect, useState } from 'react';
 import { ImageSlider } from './components/ImageSlider';
+import { Slider } from './components/Slider';
 function App() {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    getAll().then((data) => { setPhotos(data.slice(0, 10)); })
+    getAll().then((data) => { setPhotos(data.slice(0, 40)); })
   }, [])
 
   const slides = [
@@ -22,11 +23,17 @@ function App() {
     margin: "0 auto"
   };
 
-  return (
-    <div className="App" style={containerStyles}>
-      <ImageSlider slides={slides} />
+  if (photos.length > 0) {
+    return <div className="App" style={containerStyles}>
+      <Slider slides={photos} />
     </div>
-  )
+  }
+  // return (
+  //   <div className="App" style={containerStyles}>
+  //     {/* <ImageSlider slides={slides} /> */}
+
+  //   </div>
+  // )
 }
 
 export default App
