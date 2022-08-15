@@ -61,13 +61,11 @@ export const ImageSlider = ({ slides }) => {
     justifyContent: "center"
   }
 
-  const topIconStyles = () => {
-    return {
+  const topIconStyles =  {
       margin: "0 3px",
       cursor: "pointer",
       fontSize: "20px"
     }
-  }
   return (
     <>
       <div style={topIconsContainer} >
@@ -80,9 +78,9 @@ export const ImageSlider = ({ slides }) => {
         }
       </div>
       <div style={sliderStyles}>
-        <div style={leftArrowStyles} onClick={goToPrevious}><i class="arrow left"></i></div>
+        <div style={leftArrowStyles} onClick={goToPrevious}><i className="arrow left"></i></div>
         <div style={slideStyles}></div>
-        <div style={rightArrowStyles} onClick={goToNext}><i class="arrow right"></i></div>
+        <div style={rightArrowStyles} onClick={goToNext}><i className="arrow right"></i></div>
       </div>
     </>
   )
