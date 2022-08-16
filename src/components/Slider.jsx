@@ -4,11 +4,6 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 export const Slider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
-  // useEffect(() => {
-  //   document.documentElement.style.setProperty('imageUrl',slides[currentIndex].url)
-  // })
-
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -31,16 +26,18 @@ export const Slider = ({ slides }) => {
       <div className="topIconsContainer" >
         {
           slides.map((slide) => (
-            <div className="topIcons" 
-            style={{backgroundImage: `url(${slide.thumbnailUrl})`}}
-            onClick={() => goToSlide(slide.id)} key={slide.id}>
+            <div className="topIcons">
+              <img src={slide.thumbnailUrl} alt={slide.title}
+                onClick={() => goToSlide(slide.id)} key={slide.id}>
+              </img>
+              <p>{slide.title.split(' ')[0]}</p>
             </div>
           ))
         }
       </div>
       <div className="slider">
         <div className="arrow" onClick={goToPrevious}>&lt;</div>
-        <div className="slides" style={{backgroundImage: `url(${slides[currentIndex].url})`}}></div>
+        <div className="slides" style={{ backgroundImage: `url(${slides[currentIndex].url})` }}></div>
         <div className="arrow" onClick={goToNext}>&gt;</div>
       </div>
     </>
