@@ -1,0 +1,64 @@
+@use './breakpoints' as *;
+@use './colors' as *;
+@use './reset' as *;
+
+body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.slides {
+  width: 70%;
+  height: 70vh;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+.arrow {
+  cursor: pointer;
+  color: $gray;
+  border: 1px solid $gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.topIconsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  overflow-x: scroll;
+}
+
+.topIcons {
+  margin: 10px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
